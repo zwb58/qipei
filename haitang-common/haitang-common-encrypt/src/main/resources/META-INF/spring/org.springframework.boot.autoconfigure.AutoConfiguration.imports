@@ -1,0 +1,3 @@
+com.haitang.common.encrypt.config.EncryptorAutoConfiguration
+com.haitang.common.encrypt.config.ApiDecryptAutoConfiguration
+

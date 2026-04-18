@@ -1,0 +1,3 @@
+com.haitang.common.security.handler.GlobalExceptionHandler
+com.haitang.common.security.handler.AllUrlHandler
+com.haitang.common.security.config.SecurityConfig

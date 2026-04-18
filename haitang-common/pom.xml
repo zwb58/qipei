@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>haitang-vue-plus</artifactId>
+        <groupId>com.haitang</groupId>
+        <version>${revision}</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <modules>
+        <module>haitang-common-bom</module>
+        <module>haitang-common-social</module>
+        <module>haitang-common-core</module>
+        <module>haitang-common-doc</module>
+        <module>haitang-common-excel</module>
+        <module>haitang-common-idempotent</module>
+        <module>haitang-common-job</module>
+        <module>haitang-common-log</module>
+        <module>haitang-common-mail</module>
+        <module>haitang-common-mybatis</module>
+        <module>haitang-common-oss</module>
+        <module>haitang-common-ratelimiter</module>
+        <module>haitang-common-redis</module>
+        <module>haitang-common-satoken</module>
+        <module>haitang-common-security</module>
+        <module>haitang-common-sms</module>
+        <module>haitang-common-web</module>
+        <module>haitang-common-translation</module>
+        <module>haitang-common-sensitive</module>
+        <module>haitang-common-json</module>
+        <module>haitang-common-encrypt</module>
+        <module>haitang-common-tenant</module>
+        <module>haitang-common-websocket</module>
+    </modules>
+
+    <artifactId>haitang-common</artifactId>
+    <packaging>pom</packaging>
+
+    <description>
+        common 通用模块
+    </description>
+
+</project>

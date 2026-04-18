@@ -1,0 +1,5 @@
+com.haitang.common.web.config.CaptchaConfig
+com.haitang.common.web.config.FilterConfig
+com.haitang.common.web.config.I18nConfig
+com.haitang.common.web.config.ResourcesConfig
+com.haitang.common.web.config.UndertowConfig

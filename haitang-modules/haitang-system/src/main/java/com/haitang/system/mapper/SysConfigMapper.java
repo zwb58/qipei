@@ -1,0 +1,14 @@
+package com.haitang.system.mapper;
+
+import com.haitang.system.domain.SysConfig;
+import com.haitang.common.mybatis.core.mapper.BaseMapperPlus;
+import com.haitang.system.domain.vo.SysConfigVo;
+
+/**
+ * 参数配置 数据层
+ *
+ * @author Lion Li
+ */
+public interface SysConfigMapper extends BaseMapperPlus<SysConfig, SysConfigVo> {
+
+}

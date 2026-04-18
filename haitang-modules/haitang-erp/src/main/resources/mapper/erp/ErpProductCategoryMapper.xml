@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.haitang.erp.mapper.ErpProductCategoryMapper">
+
+
+    <resultMap type="com.haitang.erp.domain.vo.ErpProductCategoryVo" id="CategoryResult">
+    </resultMap>
+    <select id="selectCategoryList" resultMap="CategoryResult">
+        select * from erp_product_category ${ew.getCustomSqlSegment}
+    </select>
+</mapper>

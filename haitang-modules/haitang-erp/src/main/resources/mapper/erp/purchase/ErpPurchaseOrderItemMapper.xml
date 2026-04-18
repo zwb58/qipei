@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.haitang.erp.mapper.purchase.ErpPurchaseOrderItemMapper">
+
+    <select id="customPurchaseOrderItemPageList" resultType="com.haitang.erp.domain.purchase.vo.ErpPurchaseOrderItemVo">
+        SELECT
+            i.id as id,
+            i.order_no as orderNo,
+            i.product_id as productId,
+            p.name as productName,
+            i.product_unit_id as productUnitId,
+            i.product_price as productPrice,
+            i.count as count,
+            i.total_price as totalPrice,
+            i.tax_percent as taxPercent,
+            i.tax_price as taxPrice,
+            i.in_count as inCount,
+            i.return_count as returnCount,
+            p.bar_code as barCode,
+            u.name as productUnitName,
+            i.remark as remark
+        FROM
+            erp_purchase_order_items i
+            LEFT JOIN erp_product p ON p.id = i.product_id
+            LEFT JOIN erp_product_unit u ON u.id = p.unit_id
+           ${ew.customSqlSegment}
+    </select>
+
+    <!-- 根据订单号删除记录：将del_flag更改为2做逻辑删除 -->
+    <update id="updateDelFlagByNos" parameterType="map">
+        UPDATE erp_purchase_order_items
+        SET del_flag = #{delFlag}
+        WHERE order_no IN
+        <foreach collection="noList" item="no" open="(" separator="," close=")">
+            #{no}
+        </foreach>
+    </update>
+
+</mapper>

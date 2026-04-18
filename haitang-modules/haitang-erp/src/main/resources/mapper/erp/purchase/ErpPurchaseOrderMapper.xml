@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.haitang.erp.mapper.purchase.ErpPurchaseOrderMapper">
+
+
+    <!-- 多结构嵌套自动映射需带上每个实体的主键id 否则映射会失败 -->
+    <resultMap type="com.haitang.erp.domain.purchase.vo.ErpPurchaseOrderVo" id="ErpPurchaseOrderResult">
+        <id property="no" column="no"/>
+    </resultMap>
+    <select id="selectVoPagebyCustom" resultMap="ErpPurchaseOrderResult">
+        SELECT o.id              AS id,
+               o.no              AS no,
+               s.name            AS supplierName,
+               o.supplier_id     AS supplierId,
+               o.account_id      AS accountId,
+               o.order_time      AS orderTime,
+               o.create_by       AS createBy,
+               o.total_count     AS totalCount,
+               o.in_count        AS inCount,
+               o.return_count    AS returnCount,
+               o.total_price     AS totalPrice,
+               o.total_tax_price AS totalTaxPrice,
+               o.deposit_price   AS depositPrice,
+               o.status          AS status,
+               GROUP_CONCAT(
+                   CONCAT(
+                       p.name
+                   ) SEPARATOR ','
+               )                 AS productNames
+        FROM erp_purchase_order o
+                 LEFT JOIN erp_purchase_order_items i ON i.order_no = o.no
+                 LEFT JOIN erp_supplier s ON s.id = o.supplier_id
+                 LEFT JOIN erp_account a ON a.id = o.account_id
+                 LEFT JOIN erp_product p on p.id = i.product_id
+            ${ew.getCustomSqlSegment}
+        GROUP BY o.id
+        ORDER BY o.no DESC;
+    </select>
+
+    <update id="updateStatusById" parameterType="map">
+        UPDATE erp_purchase_order
+        SET status = #{status}
+        WHERE id = #{id}
+    </update>
+</mapper>

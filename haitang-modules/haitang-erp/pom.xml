@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.haitang</groupId>
+        <artifactId>haitang-modules</artifactId>
+        <version>${revision}</version>
+    </parent>
+
+    <artifactId>haitang-erp</artifactId>
+
+    <dependencies>
+
+        <!-- 通用工具-->
+        <dependency>
+            <groupId>com.haitang</groupId>
+            <artifactId>haitang-common-core</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.haitang</groupId>
+            <artifactId>haitang-common-doc</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.haitang</groupId>
+            <artifactId>haitang-common-sms</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.haitang</groupId>
+            <artifactId>haitang-common-mail</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.haitang</groupId>
+            <artifactId>haitang-common-redis</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.haitang</groupId>
+            <artifactId>haitang-common-idempotent</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.haitang</groupId>
+            <artifactId>haitang-common-mybatis</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.haitang</groupId>
+            <artifactId>haitang-common-log</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.haitang</groupId>
+            <artifactId>haitang-common-excel</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.haitang</groupId>
+            <artifactId>haitang-common-security</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.haitang</groupId>
+            <artifactId>haitang-common-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.haitang</groupId>
+            <artifactId>haitang-common-ratelimiter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.haitang</groupId>
+            <artifactId>haitang-common-translation</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.haitang</groupId>
+            <artifactId>haitang-common-sensitive</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.haitang</groupId>
+            <artifactId>haitang-common-encrypt</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.haitang</groupId>
+            <artifactId>haitang-common-tenant</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.haitang</groupId>
+            <artifactId>haitang-common-websocket</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.dromara.sms4j</groupId>
+            <artifactId>sms4j-api</artifactId>
+            <version>2.2.0</version>
+            <scope>compile</scope>
+        </dependency>
+
+    </dependencies>
+
+</project>
